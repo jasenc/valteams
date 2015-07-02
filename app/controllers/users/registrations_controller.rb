@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         else
           resource.save
         end
-      end 
+      end
+    end 
   end
 end
