@@ -1,6 +1,6 @@
 <div class="jumbotron text-center">
-  <h1>Welcome to Dev Match</h1>
-  <h3>A membership site where entrepreneurs can meet developers.</h3>
+  <h1>Welcome to Val Teams!</h1>
+  <h3>Are you looking to put together or join an Engineering Validation Team?</h3>
 </div>
 <div class="row">
   <% if user_signed_in? %>
@@ -12,6 +12,7 @@
           <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
         <% else %>
           <p>Create your profile so that you can share your information with the community.</p>
+          </br>
           <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block'%>
         <% end %>
       </div>
@@ -19,24 +20,23 @@
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">The Community</h2>
-        <p>Visit the community to meet other developers, entrepreneurs, and investors!</p>
+        <p>Visit the networking community to meet other contractors and consultants, as well as recruiters!</p>
         <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block' %>
       </div>
     </div>
   <% else %>
     <div class="col-md-6">
       <div class="well">
-        <h2 class="text-center">Basic Membership</h2>
-        <h4>Sign up for free and get basic access to the community.</h4>
-        <br/>
-        <%= link_to "Sign Up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" =%>
+        <h2 class="text-center">Contractors and Consultants</h2>
+        <h4 class="text-center">Sign up for free to create a profile visible to recruiters and access the networking community!</h4>
+        <%= link_to "Sign Up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-info btn-lg btn-block" =%>
       </div>
     </div>
     <div class="col-md-6">
       <div class="well">
-        <h2 class="text-center">Pro Membership</h2>
-        <h4>Sign up for the pro account for $10/month and get access to the community as well as contact information!</h4>
-        <%= link_to "Sign Up with Pro", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" =%>
+        <h2 class="text-center">Recruiters</h2>
+        <h4 class="text-center">Sign up for $10/month and get access to the community as well as contact information!</h4>
+        <%= link_to "Sign Up with Pro", new_user_registration_path(plan: @pro_plan.id), class: "btn btn-warning btn-lg btn-block" =%>
       </div>
     </div>
   <% end %>
